@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Notification } from '../notification';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +7,11 @@ import { Notification } from '../notification';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
 }
+

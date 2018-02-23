@@ -7,6 +7,10 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {AddComponent} from './add/add.component';
 import {AboutComponent} from './about/about.component';
 import {AppRoutingModule} from './app-routing.module';
+import {TimeAgoPipe} from 'time-ago-pipe';
+import { HeaderComponent } from './shared/header/header.component';
+import { CardComponent } from './shared/card/card.component';
+import { FormComponent } from './shared/form/form.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import {AppRoutingModule} from './app-routing.module';
     AppComponent,
     DashboardComponent,
     AddComponent,
-    AboutComponent
+    AboutComponent,
+    TimeAgoPipe,
+    HeaderComponent,
+    CardComponent,
+    FormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
