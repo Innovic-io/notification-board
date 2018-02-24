@@ -6,7 +6,7 @@
 }
 .card {
   /* Add shadows to create the "card" effect */
-  margin: 16px;
+  margin: 8px;
 }
 /* On mouse-over, add a deeper shadow */
 .card:hover {
