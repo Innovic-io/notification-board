@@ -1,4 +1,5 @@
-<div class="card text-white border-info bg-dark mb-3" style="max-width: 18rem;">
+<div class="wrapper">
+<div class="card text-white border-info bg-dark mb-3" *ngFor="let notification of notifications"style="max-width: 18rem;">
   <div class="card-block">
     <h4 class="card-header">{{notification.title}}</h4>
     <div class="card-body text-info">
@@ -11,4 +12,5 @@
       </p>
     </div>
   </div>
+</div>
 </div>

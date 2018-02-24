@@ -9,24 +9,24 @@ export const NOTIFICATIONS: Notification[] = [
     url: 'www.notification-board.com/a1'
   },
   {
-    author: 'Miroslav',
-    title: 'Prvo obavjestenje',
-    text: 'Obavjestavaju se posjetioci da je projekat u toku faze 1.',
-    published: new Date('2018, 02, 23'),
+    author: 'Mat',
+    title: 'Hey',
+    text: 'asjd se posjetioci da je projekat u toku faze 1.',
+    published: new Date('2017, 02, 23'),
     url: 'www.notification-board.com/a1'
   },
   {
-    author: 'Miroslav',
-    title: 'Prvo obavjestenje',
+    author: 'Wojciech',
+    title: 'Prvo Kazan',
     text: 'Obavjestavaju se posjetioci da je projekat u toku faze 1.',
-    published: new Date('2018, 02, 23'),
+    published: new Date('2017, 02, 23'),
     url: 'www.notification-board.com/a1'
   },
   {
-    author: 'Miroslav',
-    title: 'Prvo obavjestenje',
+    author: 'Janek',
+    title: 'Prvo poland',
     text: 'Obavjestavaju se posjetioci da je projekat u toku faze 1.',
-    published: new Date('2018, 02, 23'),
+    published: new Date('2018, 01, 23'),
     url: 'www.notification-board.com/a1'
   },
   {

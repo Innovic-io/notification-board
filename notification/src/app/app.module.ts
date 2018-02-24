@@ -11,6 +11,7 @@ import {TimeAgoPipe} from 'time-ago-pipe';
 import { HeaderComponent } from './shared/header/header.component';
 import { CardComponent } from './shared/card/card.component';
 import { FormComponent } from './shared/form/form.component';
+import {NotificationService} from './notification.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { FormComponent } from './shared/form/form.component';
     CardComponent,
     FormComponent
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NotificationService} from '../../notification.service';
 import {Notification} from '../../notification';
 
 @Component({
@@ -7,17 +8,16 @@ import {Notification} from '../../notification';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  notification: Notification = {
-    author: 'Miroslav',
-    title: 'Prvo obavjestenje',
-    text: 'Obavjestavaju se posjetioci da je projekat u toku.',
-    published: new Date('2018, 02, 23'),
-    url: 'www.notification-board.com/a1'
-  };
-  constructor() {
+  notifications: Notification[];
+
+  constructor(private notificationService: NotificationService) {
   }
 
   ngOnInit() {
+    this.getNotifications();
   }
 
+  getNotifications(): void {
+    this.notifications = this.notificationService.getNotifications();
+  }
 }
