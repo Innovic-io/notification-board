@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
   }
 
   getNotifications(): void {
-    this.notifications = this.notificationService.getNotifications();
+    this.notificationService.getNotifications()
+      .subscribe(notifications => this.notifications = notifications);
   }
 }

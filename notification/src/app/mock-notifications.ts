@@ -58,6 +58,5 @@ export const NOTIFICATIONS: Notification[] = [
     text: 'Obavjestavaju se posjetioci da je projekat u toku.',
     published: new Date('2018, 01, 23'),
     url: 'www.notification-board.com/a2'
-  },
-
+  }
 ];
