@@ -1,1 +1,3 @@
-<app-card [notifications]="notifications"></app-card>
+<div class="wrapper">
+  <app-card *ngFor="let notification of notifications$ | async" [notification]="notification"></app-card>
+</div>

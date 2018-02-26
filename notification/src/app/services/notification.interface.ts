@@ -1,7 +1,7 @@
-export class Notification {
+export interface INotification {
   author: string;
   title: string;
   text: string;
-  published: Date = new Date();
+  published: Date;
   url: string;
 }

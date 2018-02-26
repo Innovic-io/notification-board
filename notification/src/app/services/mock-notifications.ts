@@ -1,6 +1,6 @@
-import {Notification} from './notification';
+import { INotification } from './notification.interface';
 
-export const NOTIFICATIONS: Notification[] = [
+export const NOTIFICATIONS: INotification[] = [
   {
     author: 'Miroslav',
     title: 'Prvo obavjestenje',
