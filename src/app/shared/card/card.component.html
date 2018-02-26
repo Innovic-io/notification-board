@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="card text-white border-info bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card-block">
+      <h4 class="card-header">{{notification.title}}</h4>
+      <div class="card-body text-info">
+        <p class="card-text">{{notification.text}}</p>
+      </div>
+      <div class="card-footer bg-transparent ">
+        <p class="card-text" *ngIf="inside">
+          <small class="text-light">{{notification.author}}</small>
+          <small class="text-muted">{{notification.published | timeAgo}}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
