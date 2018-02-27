@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddComponent } from './add/add.component';
 import { AboutModule } from './features/about/about.module';
+import { DatePipe } from '@angular/common';
+import { InvalidTooltipModule } from 'ng-invalid-tooltip';
 
 
 @NgModule({
@@ -25,14 +27,15 @@ import { AboutModule } from './features/about/about.module';
       useHash: true
     }),
     SharedModule,
-    AboutModule
+    AboutModule,
+    InvalidTooltipModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
     AddComponent,
   ],
-  providers: [NotificationService],
+  providers: [NotificationService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

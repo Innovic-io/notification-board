@@ -12,6 +12,6 @@
 .container {
   padding: 2px 16px;
 }
-.card{
-  max-width: 18rem;
+.wrapper{
+  max-width: 60rem;
 }

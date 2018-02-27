@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import { DatePipe } from '@angular/common';
 
 import { NOTIFICATIONS } from './mock-notifications';
 import { INotification } from './notification.interface';
@@ -12,7 +13,7 @@ export class NotificationService {
   configUrl = 'https://httpbin.org/ip';
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private datePipe: DatePipe) {
   }
 
   getNotifications(): Observable<INotification[]> {
@@ -22,5 +23,9 @@ export class NotificationService {
   getIpAddress() {
     return this.http
       .get(this.configUrl);
+  }
+
+  transformDate(date): any {
+    return this.datePipe.transform(date, 'yyyy-MM-dd');
   }
 }

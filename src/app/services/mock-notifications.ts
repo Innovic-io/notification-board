@@ -12,7 +12,7 @@ export const NOTIFICATIONS: INotification[] = [
     author: 'Mat',
     title: 'Hey',
     text: 'asjd se posjetioci da je projekat u toku faze 1.',
-    published: new Date('2017, 02, 23'),
+    published: new Date('2017-02-23'),
     url: 'www.notification-board.com/a1'
   },
   {

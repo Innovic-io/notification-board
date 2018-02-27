@@ -6,6 +6,34 @@
   padding: 30px 0;
 }
 
+
+input:not(urlExlude).ng-invalid.ng-touched {
+  border-color: red;
+  margin: 4px;
+}
+
+textarea.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+input:not(urlExclude).ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948; /* green */
+}
+
+input:not(urlExclude).ng-invalid:not(form) {
+  border-left: 5px solid #5BC0DE; /* red */
+}
+
+textarea.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948; /* green */
+}
+
+textarea.ng-invalid:not(form) {
+  border-left: 5px solid #5BC0DE; /* red */
+}
+
+
+
 #form {
   text-align: left;
 }
@@ -15,3 +43,4 @@
   align-items: center;
   justify-content: center;
 }
+
