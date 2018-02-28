@@ -1,3 +1,0 @@
-interface ItemsResponse {
-  ip: string;
-}

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
-import { NotificationService } from '../services/notification.service';
-import { INotification } from '../services/notification.interface';
-import { NOTIFICATIONS } from '../services/mock-notifications';
+import {NotificationService} from '../services/notification.service';
+import {INotification} from '../services/notification.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,8 +12,6 @@ import { NOTIFICATIONS } from '../services/mock-notifications';
 export class DashboardComponent implements OnInit {
 
   notifications: Observable<INotification[]>;
-
-  notifications = NOTIFICATIONS;
 
   selectedNotification: Notification;
 
