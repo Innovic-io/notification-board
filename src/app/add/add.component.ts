@@ -20,6 +20,7 @@ export class AddComponent implements OnInit {
   }
 
   submitForm(data) {
-    console.log(data);
+    console.log(data.value);
+    data.reset();
   }
 }
