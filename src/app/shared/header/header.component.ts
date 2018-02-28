@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { NotificationService } from '../../services/notification.service';
+import { IP } from '../../services/notification.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,16 +10,8 @@ import { NotificationService } from '../../services/notification.service';
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
-  ipData: any;
-
-
-  constructor(private notificationService: NotificationService) {
-
-  }
+  @Input() ipData: IP;
 
   ngOnInit() {
-    this.notificationService.getIpAddress().subscribe(data => {
-      this.ipData = data['origin'];
-    });
   }
 }

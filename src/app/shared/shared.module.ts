@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
-import { TimeAgoPipe } from 'time-ago-pipe';
 import { RouterModule } from '@angular/router';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { TimeAgoPipe } from './time-ago/time-ago.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule
   ],
   declarations: [
     CardComponent,
@@ -21,6 +21,7 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
   exports: [
     CardComponent,
     HeaderComponent,
+    TimeAgoPipe,
     CardDetailComponent
   ]
 })

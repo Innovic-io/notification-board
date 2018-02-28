@@ -1,14 +1,14 @@
 <div class="wrapper">
   <div class="card text-white border-info bg-dark mb-3">
     <div class="card-block">
-      <h4 class="card-header">{{notification.title}}</h4>
+      <a routerLink="/pin/{{notification.title}}"><h4 class="card-header">{{notification.title}}</h4></a>
       <div class="card-body text-info">
         <p class="card-text">{{notification.text}}</p>
       </div>
       <div class="card-footer bg-transparent ">
         <p class="card-text" *ngIf="inside">
           <small class="text-light">{{notification.author}}</small>
-          <small class="text-muted">{{notification.published | timeAgo}}</small>
+          <small class="text-muted">{{notification.published | appTimeAgo}}</small>
         </p>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
-import {NotificationService} from '../services/notification.service';
-import {INotification} from '../services/notification.interface';
+import { NotificationService } from '../services/notification.service';
+import { INotification } from '../services/notification.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,18 +11,12 @@ import {INotification} from '../services/notification.interface';
 })
 export class DashboardComponent implements OnInit {
 
-  notifications: Observable<INotification[]>;
-
-  selectedNotification: Notification;
+  notifications$: Observable<INotification[]>;
 
   constructor(private notificationService: NotificationService) {
   }
 
   ngOnInit() {
-    this.notifications = this.notificationService.getNotifications();
-  }
-
-  onSelect(notification: Notification): void {
-    this.selectedNotification = notification;
+    this.notifications$ = this.notificationService.getNotifications();
   }
 }

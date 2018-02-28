@@ -1,18 +1,16 @@
-<div *ngIf="notification">
+<div *ngIf="notification$ | async">
   <div class="wrapper">
     <div class="card text-white border-info bg-dark mb-3">
       <div class="card-block">
-        <h4 class="card-header">{{notification.title}}</h4>
+        <h4 class="card-header">{{(notification$ | async)?.title}}</h4>
         <div class="card-body text-info">
-          <p class="card-text">{{notification.text}}</p>
-          <a class="text-white"> {{notification.url}}</a>
+          <p class="card-text">{{(notification$ | async)?.text}}</p>
+          <a class="text-white"> {{(notification$ | async)?.url}}</a>
         </div>
-
-
         <div class=" card-footer bg-transparent ">
           <p class="card-text">
-            <small class="text-light">{{notification.author}}</small>
-            <small class="text-muted">{{notification.published | timeAgo}}</small>
+            <small class="text-light">{{(notification$ | async)?.author}}</small>
+            <small class="text-muted">{{(notification$ | async)?.published | appTimeAgo}}</small>
           </p>
         </div>
       </div>
