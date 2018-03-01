@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { IP } from '../../services/notification.service';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+
+import {IP} from '../../services/notification.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,4 +15,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

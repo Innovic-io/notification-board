@@ -1,16 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NotificationService } from '../../services/notification.service';
+import { NotificationService } from '../services/notification.service';
 import { Observable } from 'rxjs/Observable';
-import { INotification } from '../../services/notification.interface';
+
+import { INotification } from '../services/notification.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
-  selector: 'app-card-detail',
-  templateUrl: './card-detail.component.html',
-  styleUrls: ['./card-detail.component.css']
+  selector: 'app-pin-detail',
+  templateUrl: './pin-detail.component.html',
+  styleUrls: ['./pin-detail.component.css']
 })
-export class CardDetailComponent implements OnInit {
+export class PinDetailComponent implements OnInit {
   notification$: Observable<INotification>;
 
   constructor(private route: ActivatedRoute, private notificationService: NotificationService) {

@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
-import { CardComponent } from './card/card.component';
-import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '@angular/router';
-import { CardDetailComponent } from './card-detail/card-detail.component';
-import { TimeAgoPipe } from './time-ago/time-ago.pipe';
+import {CardComponent} from './card/card.component';
+import {HeaderComponent} from './header/header.component';
+import {TimeAgoPipe} from './time-ago/time-ago.pipe';
+import {CardOptionsComponent} from './card-options/card-options.component';
 
 @NgModule({
   imports: [
@@ -16,13 +16,13 @@ import { TimeAgoPipe } from './time-ago/time-ago.pipe';
     CardComponent,
     HeaderComponent,
     TimeAgoPipe,
-    CardDetailComponent
+    CardOptionsComponent
   ],
   exports: [
     CardComponent,
     HeaderComponent,
     TimeAgoPipe,
-    CardDetailComponent
+    CardOptionsComponent
   ]
 })
 export class SharedModule {

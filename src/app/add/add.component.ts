@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../services/notification.service';
+import {Component, OnInit} from '@angular/core';
+
+import {NotificationService} from '../services/notification.service';
+import {NOTIFICATIONS} from '../services/mock-notifications';
 
 @Component({
   selector: 'app-add',
@@ -8,7 +10,7 @@ import { NotificationService } from '../services/notification.service';
 })
 export class AddComponent implements OnInit {
   date = new Date();
-  currentDate: any;
+  currentDate: string;
 
   constructor(private notificationService: NotificationService) {
   }
@@ -21,6 +23,8 @@ export class AddComponent implements OnInit {
 
   submitForm(data) {
     console.log(data.value);
+    this.notificationService.postNotification(data.value, this.currentDate);
+    console.log(NOTIFICATIONS);
     data.reset();
   }
 }

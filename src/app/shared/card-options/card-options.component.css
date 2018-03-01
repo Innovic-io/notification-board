@@ -1,0 +1,14 @@
+.Share {
+  float: left;
+  height: 28px;
+  width: 28px;
+  margin: 8px;
+}
+
+.Save {
+  float: right;
+  height: 28px;
+  width: 28px;
+  margin: 8px;
+}
+

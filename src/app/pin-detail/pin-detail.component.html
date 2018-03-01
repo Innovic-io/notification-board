@@ -1,6 +1,7 @@
 <div *ngIf="notification$ | async">
   <div class="wrapper">
     <div class="card text-white border-info bg-dark mb-3">
+      <app-card-options></app-card-options>
       <div class="card-block">
         <h4 class="card-header">{{(notification$ | async)?.title}}</h4>
         <div class="card-body text-info">

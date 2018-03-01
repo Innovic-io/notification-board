@@ -1,3 +1,6 @@
 <div class="wrapper">
-  <app-card *ngFor="let notification of notifications$ | async" [notification]="notification"></app-card>
+<div class="masonry">
+  <app-card class="item" *ngFor="let notification of notifications$ | async"
+            [notification]="notification"></app-card>
+</div>
 </div>
