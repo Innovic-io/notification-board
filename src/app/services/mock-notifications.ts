@@ -17,14 +17,14 @@ export const NOTIFICATIONS: INotification[] = [
   },
   {
     author: 'Mat',
-    title: 'Hey',
-    text: 'asjd se posjetioci da je projekat u toku faze 1.',
+    title: 'MAMADOUH',
+    text: 'Zelimo pokazati se posjetioci da je projekat u toku faze 1.Zelimo pokazati se posjetioci da je projekat u toku faze 1Zelimo pokazati se posjetioci da je projekat u toku faze 1',
     published: new Date('2017-02-23'),
     url: 'www.notification-board.com/a1'
   },
   {
     author: 'Wojciech',
-    title: 'Prvo Kazan',
+    title: 'Naslov',
     text: 'Obavjestavaju se posjetioci da je projekat u toku faze 1.',
     published: new Date('2017, 02, 23'),
     url: 'www.notification-board.com/a1'

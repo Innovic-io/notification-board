@@ -2,7 +2,9 @@
 .card {
   /* Add shadows to create the "card" effect */
   margin: 8px;
+  height: auto;
 }
+
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -12,6 +14,36 @@
 .container {
   padding: 2px 16px;
 }
-.wrapper{
-  max-width: 60rem;
+
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 0px) {
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .masonry {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .masonry {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
