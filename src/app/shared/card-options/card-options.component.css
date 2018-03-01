@@ -12,3 +12,7 @@
   margin: 8px;
 }
 
+:host {
+  position: relative
+}
+

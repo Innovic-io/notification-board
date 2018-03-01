@@ -1,2 +1,5 @@
-<app-header [ipData]="ipData$ | async"></app-header>
-<router-outlet></router-outlet>
+<app-header (inputFocus)="setCover()" [ipData]="ipData$ | async"></app-header>
+
+<div class="wrapper" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">
+  <router-outlet></router-outlet>
+</div>

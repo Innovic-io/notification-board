@@ -11,7 +11,7 @@
           <div class="form-group">
             <div class="col-md-7">
               <label class="col-md-7 control-label text-info" for="authorInput">Author</label>
-              <input id="authorInput" ngModel name="author" type="text" placeholder="Your name"
+              <input id="authorInput" autocomplete="off" ngModel name="author" type="text" placeholder="Your name"
                      class="form-control input-md" required minlength="5"
                      [invalidTooltip]="{required: 'Your name is required'}">
             </div>
@@ -21,7 +21,7 @@
           <div class="form-group">
             <div class="col-md-7">
               <label class="col-md-7 control-label text-info" for="titleInput">Title</label>
-              <input id="titleInput" ngModel name="title" type="text" placeholder="Your title"
+              <input id="titleInput" ngModel autocomplete="off" name="title" type="text" placeholder="Your title"
                      class="form-control input-md" required minlength="5"
                      [invalidTooltip]="{required: 'Title is required'}">
 
@@ -32,7 +32,7 @@
           <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-8 control-label text-info" for="urlInput">Url</label>
-              <input id="urlInput" ngModel name="url" type="url" placeholder="Your url"
+              <input id="urlInput" autocomplete="off" ngModel name="url" type="url" placeholder="Your url"
                      class=" urlExclude form-control input-md">
 
             </div>

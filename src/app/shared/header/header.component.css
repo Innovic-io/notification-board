@@ -6,14 +6,7 @@
   margin: 20px;
 }
 
-.aboutImage {
-  float: right;
-  height: 28px;
-  width: 28px;
-  margin: 20px;
-}
-
-.imageMenu {
+.imageMenu, .aboutImage {
   float: right;
   height: 28px;
   width: 28px;

@@ -11,6 +11,7 @@ import { IP, NotificationService } from './services/notification.service';
 export class AppComponent implements OnInit {
 
   ipData$: Observable<IP>;
+  isOverlay;
 
   constructor(private notificationService: NotificationService) {
   }
@@ -18,5 +19,12 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this.ipData$ = this.notificationService.getIpAddress();
+  }
+
+  setCover() {
+    this.isOverlay = true;
+  }
+  removeCover() {
+    this.isOverlay = false;
   }
 }

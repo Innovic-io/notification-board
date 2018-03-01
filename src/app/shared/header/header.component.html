@@ -1,9 +1,8 @@
 <div class="topnav" id="myTopnav">
   <img routerLink="/dashboard" class="image" src="assets/scalableVectorGraphics/pinterest.svg" alt="Logo">
   <a routerLink="/dashboard" class="active">Dashboard</a>
-  <input class="search" type="text" placeholder="Search" name="srch-term">
+  <input (focus)="onFocus()" class="search" type="text" placeholder="Search" name="srch-term">
   <img routerLink="/about" class="imageMenu" src="assets/scalableVectorGraphics/dots.svg" alt="Menu">
   <img routerLink="/add" class="aboutImage" src="assets/scalableVectorGraphics/menu.svg" alt="Logo">
 </div>
 <a>IP: {{ipData?.origin}}</a>
-

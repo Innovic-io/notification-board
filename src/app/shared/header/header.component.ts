@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {IP} from '../../services/notification.service';
 
@@ -12,8 +12,12 @@ export class HeaderComponent implements OnInit {
 
   @Input() title: string;
   @Input() ipData: IP;
+  @Output() inputFocus = new EventEmitter();
 
   ngOnInit() {
   }
 
+  onFocus() {
+    this.inputFocus.next(true);
+  }
 }
