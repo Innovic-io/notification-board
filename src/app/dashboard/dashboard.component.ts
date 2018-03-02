@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { NotificationService } from '../services/notification.service';
 import { INotification } from '../services/notification.interface';
+import { IJSONResponse } from '../services/jsonResponse.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +12,12 @@ import { INotification } from '../services/notification.interface';
 })
 export class DashboardComponent implements OnInit {
 
-  notifications$: Observable<INotification[]>;
+  notifications$: Observable<IJSONResponse<INotification[]>>;
 
   constructor(private notificationService: NotificationService) {
   }
 
   ngOnInit() {
-    this.notifications$ = this.notificationService.getNotifications();
+    this.notifications$ = this.notificationService.getNotifications<INotification>();
   }
 }

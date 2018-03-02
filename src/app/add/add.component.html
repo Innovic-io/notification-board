@@ -1,6 +1,6 @@
 <div class="wrapper container">
   <form class="form-horizontal" #notificationForm="ngForm"
-        (submit)="submitForm(notificationForm)"  >
+        (submit)="submitForm(notificationForm)">
     <div class="card text-white border-info bg-dark mb-3">
       <fieldset>
 
@@ -32,8 +32,10 @@
           <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-8 control-label text-info" for="urlInput">Url</label>
-              <input id="urlInput" autocomplete="off" ngModel name="url" type="url" placeholder="Your url"
-                     class=" urlExclude form-control input-md">
+              <input id="urlInput" pattern="https?://.+" autocomplete="off" ngModel name="url" type="url"
+                     placeholder="Your url"
+                     class=" urlExclude form-control input-md"
+                     [invalidTooltip]="{required: 'Either type url or not, choice is yours.'}">
 
             </div>
           </div>
@@ -51,7 +53,8 @@
         <!-- Button (Double) -->
         <div id="buttonsDiv" class="form-group">
           <button id="createButton" type="submit" name="createButton" class="btn btn-light"
-                  [disabled]="!notificationForm.form.valid">Done</button>
+                  [disabled]="!notificationForm.form.valid">Done
+          </button>
         </div>
       </fieldset>
     </div>
