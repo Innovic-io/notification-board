@@ -1,5 +1,39 @@
-.image:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
-  border-radius: 5px;
+.card{
+  background-color: #515b72;
 }
+.card:hover .cardOptions, .text {
+  opacity: 1.0;
+}
+
+.card:hover .text {
+  opacity: 1.0;
+}
+
+.card small {
+  float: left;
+  margin: 4px;
+}
+
+.optionsImage {
+  opacity: 0.5;
+}
+
+.optionsImage:hover {
+  opacity: 1.0;
+}
+
+.card .optionsImage {
+  float: right;
+  height: 24px;
+  width: 24px;
+}
+
+.cardOptions, .text {
+  opacity: 0.0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+

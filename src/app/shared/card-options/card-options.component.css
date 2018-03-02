@@ -3,6 +3,7 @@
   height: 28px;
   width: 28px;
   margin: 8px;
+  opacity: 0.8;
 }
 
 .Save {
@@ -10,6 +11,15 @@
   height: 28px;
   width: 28px;
   margin: 8px;
+  opacity: 0.8;
+}
+
+.Share:hover {
+  opacity: 1.0;
+}
+
+.Save:hover {
+  opacity: 1.0;
 }
 
 :host {

@@ -1,15 +1,14 @@
-<div class="wrapper">
-  <div class="card text-white border-info bg-dark mb-3">
-    <app-card-options class="cardOptions"></app-card-options>
-    <div class="image card-block">
-      <a routerLink="/pin/{{notification.title}}"><h4 class="card-header">{{notification.title}}</h4></a>
-      <div class="card-body text-info">
-        <p class="card-text">{{notification.text}}</p>
-      </div>
-      <div class="text card-footer bg-transparent ">
-        <small class="text-light">{{notification.author}}</small>
-        <small class="text-muted">{{notification.published | appTimeAgo}}</small>
-      </div>
+<div class="card text-white border-info mb-3">
+  <app-card-options class="cardOptions"></app-card-options>
+  <div class="image card-block">
+    <a routerLink="/pin/{{notification.title}}"><h4 class="card-header">{{notification.title}}</h4></a>
+    <div class="card-body text-info">
+      <p class="card-text">{{notification.text}}</p>
+    </div>
+    <div class="text card-footer bg-transparent ">
+      <small class="text-light">{{notification.author}}</small>
+      <small class="text-muted">{{notification.published | appTimeAgo}}</small>
+      <img class="optionsImage" src="assets/scalableVectorGraphics/dots.svg" alt="Logo">
     </div>
   </div>
 </div>
