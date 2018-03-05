@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { NotificationService } from '../services/notification.service';
-import { Observable } from 'rxjs/Observable';
+import {NotificationService} from '../services/notification.service';
+
 
 @Component({
   selector: 'app-add',
@@ -10,9 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AddComponent implements OnInit {
 
-  result$: Observable<any>;
-
-  constructor(private notificationService: NotificationService) {
+  constructor(private notificationService: NotificationService, private router: Router) {
   }
 
   ngOnInit() {
@@ -24,8 +23,7 @@ export class AddComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         form.reset();
-
-        // @TODO redirect to dashboard
+        this.router.navigate(['../dashboard']);
       }, (err) => {
         console.log(err);
       });
