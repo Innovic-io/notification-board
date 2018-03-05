@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import {NotificationService} from '../services/notification.service';
+import { NotificationService } from '../services/notification.service';
 
 
 @Component({

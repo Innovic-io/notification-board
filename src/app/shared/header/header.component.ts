@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import {IP} from '../../services/notification.service';
-import {INotification} from '../../services/notification.interface';
+import { IP } from '../../services/notification.service';
+import { INotification } from '../../services/notification.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

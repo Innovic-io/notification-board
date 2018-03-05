@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import {environment} from '../../environments/environment.staging';
-import {api} from '../../environments/environment.api';
-import {IJSONResponse} from './jsonResponse.interface';
+import { environment } from '../../environments/environment.staging';
+import { api } from '../../environments/environment.api';
+import { IJSONResponse } from './jsonResponse.interface';
 
 export interface IP {
   origin: string;

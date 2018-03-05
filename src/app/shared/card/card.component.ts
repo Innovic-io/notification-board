@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {INotification} from '../../services/notification.interface';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { INotification } from '../../services/notification.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,6 +9,7 @@ import {INotification} from '../../services/notification.interface';
 })
 export class CardComponent implements OnInit {
   @Input() notification: INotification;
+
   constructor() {
   }
 

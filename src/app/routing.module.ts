@@ -1,8 +1,8 @@
-import {Routes} from '@angular/router';
+import { Routes } from '@angular/router';
 
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {AddComponent} from './add/add.component';
-import {PinDetailComponent} from './pin-detail/pin-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddComponent } from './add/add.component';
+import { PinDetailComponent } from './pin-detail/pin-detail.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},

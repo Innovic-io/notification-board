@@ -1,10 +1,10 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {NotificationService} from '../services/notification.service';
-import {Observable} from 'rxjs/Observable';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
+import { Observable } from 'rxjs/Observable';
 
-import {INotification} from '../services/notification.interface';
-import {IJSONResponse} from '../services/jsonResponse.interface';
+import { INotification } from '../services/notification.interface';
+import { IJSONResponse } from '../services/jsonResponse.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -16,7 +16,8 @@ export class PinDetailComponent implements OnInit {
 
   notification$: Observable<IJSONResponse<INotification>>;
 
-  constructor(private route: ActivatedRoute, private notificationService: NotificationService) {}
+  constructor(private route: ActivatedRoute, private notificationService: NotificationService) {
+  }
 
   ngOnInit() {
 
