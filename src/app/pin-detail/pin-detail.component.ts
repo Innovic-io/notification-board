@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NotificationService } from '../services/notification.service';
-import { Observable } from 'rxjs/Observable';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {NotificationService} from '../services/notification.service';
+import {Observable} from 'rxjs/Observable';
 
-import { INotification } from '../services/notification.interface';
+import {INotification} from '../services/notification.interface';
+import {IJSONResponse} from '../services/jsonResponse.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -12,11 +13,10 @@ import { INotification } from '../services/notification.interface';
   styleUrls: ['./pin-detail.component.css']
 })
 export class PinDetailComponent implements OnInit {
-  notification$: Observable<INotification>;
+  notification$: Observable<IJSONResponse<INotification>>;
 
   constructor(private route: ActivatedRoute, private notificationService: NotificationService) {
   }
-
 
   ngOnInit() {
 
