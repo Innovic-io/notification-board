@@ -3,7 +3,6 @@
         (submit)="submitForm(notificationForm)">
     <div class="card text-white border-info bg-dark mb-3">
       <fieldset>
-
         <!-- Form Name -->
         <legend>Create Notification</legend>
         <div id="form">
@@ -16,7 +15,6 @@
                      [invalidTooltip]="{required: 'Your name is required'}">
             </div>
           </div>
-
           <!-- Text input-->
           <div class="form-group">
             <div class="col-md-7">
@@ -24,10 +22,8 @@
               <input id="titleInput" ngModel autocomplete="off" name="title" type="text" placeholder="Your title"
                      class="form-control input-md" required minlength="5"
                      [invalidTooltip]="{required: 'Title is required'}">
-
             </div>
           </div>
-
           <!-- Url input-->
           <div class="form-group">
             <div class="col-md-8">
@@ -35,10 +31,8 @@
               <input id="urlInput" pattern="https?://.+" autocomplete="off" ngModel name="url" type="url"
                      placeholder="Your url"
                      class=" urlExclude form-control input-md">
-
             </div>
           </div>
-
           <!-- Textarea -->
           <div class="form-group">
             <div class="col-md-10">

@@ -1,4 +1,4 @@
-<div *ngIf="notification$ | async">
+<div *ngIf="(notification$ | async)?.result">
   <div class="wrapper">
     <div class="card text-white border-info bg-dark mb-3">
       <app-card-options></app-card-options>
@@ -8,7 +8,7 @@
           <p class="card-text">{{(notification$ | async)?.result.text}}</p>
           <a class="text-white"> {{(notification$ | async)?.result.url}}</a>
         </div>
-        <div class=" card-footer bg-transparent ">
+        <div class=" card-footer bg-transparent">
           <p class="card-text">
             <small class="text-light">{{(notification$ | async)?.result.author}}</small>
             <small class="text-muted">{{(notification$ | async)?.result.published | appTimeAgo}}</small>

@@ -14,27 +14,27 @@ export interface IP {
 @Injectable()
 export class NotificationService {
 
-
   constructor(private http: HttpClient) {
   }
 
-  getNotifications<T>(): Observable<IJSONResponse> {
-    return this.http.get<IJSONResponse<T>>(api.url + '?fields=title', {headers: api.headers});
+  getNotifications<T>() {
+
+    return this.http.get<IJSONResponse<T>>([api.url, '?fields=title,author,published,text'].join(''), { headers: api.headers });
   }
 
-  getNotification<T>(id: any): Observable<IJSONResponse> {
-    return this.http.get<IJSONResponse<T>>(api.url + id, {headers: api.headers});
+  getNotification<T>(id: any) {
+    return this.http.get<IJSONResponse<T>>(api.url + id, { headers: api.headers });
   }
 
   postNotification(data) {
     return this.http.post(api.url, data);
   }
 
-  searchNotifications<T>(term: string): Observable<IJSONResponse> {
+  searchNotifications<T>(term: string) {
     if (!term.trim()) {
       return of(null);
     }
-    return this.http.get<IJSONResponse<T>>(api.url + `?fields=${term}`);
+    return this.http.get<IJSONResponse<T>>(`${api.url}?fields=${term}`);
   }
 
   getIpAddress() {

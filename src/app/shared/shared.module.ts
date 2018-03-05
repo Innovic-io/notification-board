@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
-import { TimeAgoPipe } from './CustomPipes/time-ago.pipe';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { CardOptionsComponent } from './card-options/card-options.component';
-import { SortByPipe } from './CustomPipes/sort-by-pipe';
+import { SortByPipe } from './pipes/sort-by-pipe';
 
 @NgModule({
   imports: [

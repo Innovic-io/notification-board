@@ -13,10 +13,10 @@ import {IJSONResponse} from '../services/jsonResponse.interface';
   styleUrls: ['./pin-detail.component.css']
 })
 export class PinDetailComponent implements OnInit {
+
   notification$: Observable<IJSONResponse<INotification>>;
 
-  constructor(private route: ActivatedRoute, private notificationService: NotificationService) {
-  }
+  constructor(private route: ActivatedRoute, private notificationService: NotificationService) {}
 
   ngOnInit() {
 

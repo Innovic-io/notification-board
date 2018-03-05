@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NotificationService } from '../services/notification.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-add',
@@ -9,14 +10,24 @@ import { NotificationService } from '../services/notification.service';
 })
 export class AddComponent implements OnInit {
 
+  result$: Observable<any>;
+
   constructor(private notificationService: NotificationService) {
   }
 
   ngOnInit() {
   }
 
-  submitForm(data) {
-    this.notificationService.postNotification(data.value);
-    data.reset();
+  submitForm(form) {
+
+    this.notificationService.postNotification(form.value)
+      .subscribe((data) => {
+        console.log(data);
+        form.reset();
+
+        // @TODO redirect to dashboard
+      }, (err) => {
+        console.log(err);
+      });
   }
 }

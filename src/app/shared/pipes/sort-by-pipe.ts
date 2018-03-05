@@ -6,10 +6,12 @@ import { INotification } from '../../services/notification.interface';
 })
 
 export class SortByPipe implements PipeTransform {
+
   transform(array: INotification[], args: any): INotification[] {
     if (!array) {
       return null;
     }
+
     array.sort((a: any, b: any) => {
       if (array.length === 0) {
         return 0;
@@ -22,6 +24,7 @@ export class SortByPipe implements PipeTransform {
         return 0;
       }
     });
+
     return array;
   }
 }
