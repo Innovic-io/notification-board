@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="dashboardWrapper">
   <div class="masonry">
     <app-card class="item" *ngFor="let notification of (notifications$ | async)?.result | sort"
               [notification]="notification"></app-card>

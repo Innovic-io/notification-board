@@ -2,10 +2,10 @@
   <app-card-options class="cardOptions"></app-card-options>
   <div class="image card-block">
     <a routerLink="/pin/{{notification._id}}"><h4 class="card-header">{{notification.title}}</h4></a>
-    <div class="card-body text-info">
+    <div class="card-body text-dark">
       <p class="card-text">{{notification.text}}</p>
     </div>
-    <div class="text card-footer bg-transparent ">
+    <div class="text card-footer ">
       <small class="text-light">{{notification.author}}</small>
       <small class="text-muted">{{notification.published | appTimeAgo}}</small>
       <img class="optionsImage" src="assets/scalableVectorGraphics/dots.svg" alt="Logo">

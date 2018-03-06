@@ -1,4 +1,4 @@
-.wrapper {
+.dashboardWrapper {
   width: 95%;
   margin: 3em auto;
 }
@@ -53,7 +53,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .wrapper {
+  .dashboardWrapper {
     width: 1260px;
   }
 }

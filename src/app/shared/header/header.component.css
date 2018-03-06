@@ -1,84 +1,63 @@
-
-.image {
+.imgWrapper, .menuWrapper, .aboutWrapper, .chatWrapper {
   float: left;
-  height: 28px;
-  width: 28px;
-  margin: 20px;
-  opacity: 0.7;
-  -webkit-appearance: none;
-}
-
-.imageMenu, .aboutImage {
-  float: right;
-  height: 28px;
-  width: 28px;
-  margin: 20px;
-  opacity: 0.7;
-  -webkit-appearance: none;
-}
-
-.topnav {
-  background-color: white;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #a39a9a;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 100%;
-  margin: 10px;
-  font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
-}
-
-.topnav input {
-  float: left;
-  background-color: #f4eded;
-  width: 55%;
-  height: 15px;
-  padding: 20px 20px;
-  margin: 15px;
-  font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
-
-}
-
-.topnav a:hover {
-  background-color: #e3dcdc;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  margin: 8px;
+  box-sizing: border-box;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   position: relative;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  text-align: center;
 }
 
-.topnav img:hover {
-  opacity: 1.0;
-
+.nav-item {
+  margin: 8px;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: relative;
-  }
-
-  .topnav.responsive img {
-    float: left;
-    display: block;
-    text-align: left;
-  }
+.image, .menu, .about, .chat {
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  outline: none;
 }
 
-@media screen and (max-width: 960px) {
-  .topnav.responsive {
-    position: relative;
-  }
+.dashboard {
+  background-color: transparent;
+  border-radius: 999px;
+}
 
-  .topnav.responsive img {
-    float: left;
-    display: block;
-    text-align: left;
-  }
+.form-inline {
+  width: 100%;
+  color: #555;
+}
+
+.search {
+  width: 100%;
+}
+
+.imgWrapper:hover, .menuWrapper:hover, .aboutWrapper:hover, .chatWrapper:hover, .dashboard:hover, .searchRessultsDiv:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.searchResults {
+  position: absolute;
+  left: 200px;
+  top: 80px;
+  width: 400px;
+  height: 200px;
+  background: white;
+  overflow: scroll;
+  z-index: 100;
+}
+
+.searchRessultsDiv {
+  background-color: transparent;
+  border-radius: 999px;
 }

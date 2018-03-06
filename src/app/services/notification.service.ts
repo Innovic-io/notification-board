@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.staging';
 import { api } from '../../environments/environment.api';
 import { IJSONResponse } from './jsonResponse.interface';
+import { Observable } from 'rxjs/Observable';
 
 export interface IP {
   origin: string;

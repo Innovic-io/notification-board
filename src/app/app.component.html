@@ -1,6 +1,6 @@
 <app-header (inputFocus)="setCover()" (inputSearch)="searchFocus($event)"
             [ipData]="ipData$ | async" [notifications]="notifications$ | async">
 </app-header>
-<div class="wrapper" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">
+<div class="dashboardWrapper" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">
   <router-outlet></router-outlet>
 </div>

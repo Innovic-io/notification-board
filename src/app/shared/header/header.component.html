@@ -1,15 +1,49 @@
-<div class="topnav">
-  <img routerLink="/dashboard" class="image" src="assets/scalableVectorGraphics/pinterest.svg" alt="Logo">
-  <a routerLink="/dashboard" class="active">Dashboard</a>
-  <input (focus)="onFocus()" (input)="onInputChange($event)" class="search" type="text" placeholder="Search"
-         name="srch-term">
-  <img routerLink="/about" class="imageMenu" src="assets/scalableVectorGraphics/dots.svg" alt="Menu">
-  <img routerLink="/add" class="aboutImage" src="assets/scalableVectorGraphics/menu.svg" alt="Logo">
-</div>
-<a>IP: {{ipData?.origin}}</a>
-<ul>
-  <li *ngFor="let notification of notifications?.result">
-    {{notification.title}}
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div routerLink="/dashboard" class="imgWrapper">
+    <img class="image" src="assets/scalableVectorGraphics/pinterest.svg" alt="Logo">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="search form-control mr-sm-2 bg-light" type="search" placeholder="Search" aria-label="Search"
+           (focus)="onFocus()" (input)="onInputChange($event)">
+    <div class="searchResults" *ngIf="notifications?.result">
+      <div class="searchRessultsDiv" *ngFor="let notification of notifications?.result">
+        <a>{{notification.title}}</a>
+      </div>
+    </div>
+  </form>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item dashbo">
+        <a class="nav-link dashboard" routerLink="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dashboard" routerLink="/">User <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <div routerLink="/add" class="aboutWrapper">
+          <img class="about" src="assets/scalableVectorGraphics/menu.svg" alt="About">
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <div routerLink="" class="chatWrapper">
+          <img class="menu" src="assets/scalableVectorGraphics/chat.svg" alt="Chat">
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <div routerLink="/about" class="menuWrapper">
+          <img class="menu" src="assets/scalableVectorGraphics/dots.svg" alt="Menu">
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>

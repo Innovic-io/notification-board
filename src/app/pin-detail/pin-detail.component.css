@@ -15,13 +15,13 @@
   padding: 2px 16px;
 }
 
-.wrapper {
+.dashboardWrapper {
   width: 50%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 0px) {
-  .wrapper {
+  .dashboardWrapper {
     width: 90%;
     margin: 0 auto;
   }
@@ -42,7 +42,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .wrapper {
+  .dashboardWrapper {
     width: 60%;
     margin: 0 auto;
   }
