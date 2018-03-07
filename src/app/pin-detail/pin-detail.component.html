@@ -1,4 +1,5 @@
-<div class="dashboardWrapper">
+<app-loader *ngIf="!(notification$| async)?.result"></app-loader>
+<div class="dashboardWrapper" *ngIf="(notification$| async)?.result">
   <div class="card text-white border-info bg-dark mb-3">
     <app-card-options></app-card-options>
     <div class="card-block">

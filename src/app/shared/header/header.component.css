@@ -1,5 +1,4 @@
-.imgWrapper, .menuWrapper, .aboutWrapper, .chatWrapper {
-  float: left;
+.navbar-brand {
   background-color: transparent;
   height: 48px;
   width: 48px;
@@ -18,9 +17,9 @@
   vertical-align: middle;
 }
 
-.image, .menu, .about, .chat {
-  height: 28px;
-  width: 28px;
+.image, .menu, .dots, .chat {
+  height: 32px;
+  width: 32px;
   position: absolute;
   margin: auto;
   top: 0;
@@ -37,14 +36,16 @@
 
 .form-inline {
   width: 100%;
-  color: #555;
+  color: #D3D3D3;
 }
 
 .search {
   width: 100%;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.imgWrapper:hover, .menuWrapper:hover, .aboutWrapper:hover, .chatWrapper:hover, .dashboard:hover, .searchRessultsDiv:hover {
+.navbar-brand:hover, .menuWrapper:hover, .aboutWrapper:hover, .chatWrapper:hover, .dashboard:hover, .searchRessultsDiv:hover {
   background-color: rgba(0, 0, 0, 0.06);
 }
 
@@ -62,4 +63,21 @@
 .searchRessultsDiv {
   background-color: transparent;
   border-radius: 999px;
+}
+
+.form-inline {
+  margin: 8px;
+}
+
+@media (max-width: 992px) {
+
+  .navbar-nav {
+    max-width: 200px;
+    margin: 0 auto;
+    display: -webkit-box;
+  }
+
+  .navbar-nav li {
+    text-align: center;
+  }
 }

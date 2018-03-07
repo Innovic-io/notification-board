@@ -11,7 +11,6 @@ import { IJSONResponse } from '../services/jsonResponse.interface';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   notifications$: Observable<IJSONResponse<INotification[]>>;
 
   constructor(private notificationService: NotificationService) {

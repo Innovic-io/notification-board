@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <div routerLink="/dashboard" class="imgWrapper">
-    <img class="image" src="assets/scalableVectorGraphics/pinterest.svg" alt="Logo">
-  </div>
+  <a routerLink="/dashboard" class="navbar-brand">
+    <img src="/assets/scalableVectorGraphics/pinterest.svg" class="image d-inline-block align-top"
+         alt="Logo">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,31 +19,36 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item">
         <a class="nav-link dashboard" routerLink="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link dashboard" routerLink="/">User <span class="sr-only">(current)</span></a>
       </li>
 
+    </ul>
+
+    <ul class="navbar-nav mr-auto">
+
       <li class="nav-item">
-        <div routerLink="/add" class="aboutWrapper">
-          <img class="about" src="assets/scalableVectorGraphics/menu.svg" alt="About">
-        </div>
+        <a routerLink="/add" class="navbar-brand">
+          <img class="menu" src="assets/scalableVectorGraphics/menu.svg" width="30" height="30" alt="">
+        </a>
       </li>
 
       <li class="nav-item">
-        <div routerLink="" class="chatWrapper">
-          <img class="menu" src="assets/scalableVectorGraphics/chat.svg" alt="Chat">
-        </div>
+        <a routerLink="" class="navbar-brand">
+          <img class="chat" src="assets/scalableVectorGraphics/chat.svg" alt="Chat">
+        </a>
       </li>
 
       <li class="nav-item">
-        <div routerLink="/about" class="menuWrapper">
-          <img class="menu" src="assets/scalableVectorGraphics/dots.svg" alt="Menu">
-        </div>
+        <a routerLink="/about" class="navbar-brand">
+          <img class="dots" src="assets/scalableVectorGraphics/dots.svg" alt="dots">
+        </a>
       </li>
-
     </ul>
   </div>
 </nav>

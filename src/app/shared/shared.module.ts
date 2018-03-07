@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { CardOptionsComponent } from './card-options/card-options.component';
 import { SortByPipe } from './pipes/sort-by-pipe';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   imports: [
@@ -18,14 +19,16 @@ import { SortByPipe } from './pipes/sort-by-pipe';
     HeaderComponent,
     TimeAgoPipe,
     SortByPipe,
-    CardOptionsComponent
+    CardOptionsComponent,
+    LoaderComponent
   ],
   exports: [
     CardComponent,
     HeaderComponent,
     TimeAgoPipe,
     SortByPipe,
-    CardOptionsComponent
+    CardOptionsComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule {
