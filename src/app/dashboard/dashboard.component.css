@@ -6,9 +6,9 @@
 .masonry {
   margin: 0.2em 0;
   padding: 0;
-  -moz-column-gap: 0.5em;
-  -webkit-column-gap: 0.5em;
-  column-gap: 0.5em;
+  -moz-column-gap: 0.2em;
+  -webkit-column-gap: 0.2em;
+  column-gap: 0.2em;
   font-size: .85em;
 }
 

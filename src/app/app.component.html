@@ -1,4 +1,5 @@
-<app-header (inputFocus)="setCover()" (inputSearch)="searchFocus($event)"
+<app-header *ngIf="!router.url.includes('pin')" (inputFocus)="setCover()"
+            (inputSearch)="searchFocus($event)"
             [ipData]="ipData$ | async" [notifications]="notifications$ | async">
 </app-header>
 <div class="dashboardWrapper" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">

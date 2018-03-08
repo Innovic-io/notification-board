@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
-import {IP, NotificationService} from './services/notification.service';
-import {IJSONResponse} from './services/jsonResponse.interface';
-import {INotification} from './services/notification.interface';
+import { IP, NotificationService } from './services/notification.service';
+import { IJSONResponse } from './services/jsonResponse.interface';
+import { INotification } from './services/notification.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,11 @@ export class AppComponent implements OnInit {
   isOverlay;
   notifications$: Observable<IJSONResponse<INotification[]>>;
 
-  constructor(private notificationService: NotificationService) {
+  constructor(private notificationService: NotificationService, public router: Router) {
+
   }
 
   ngOnInit() {
-
     this.ipData$ = this.notificationService.getIpAddress();
   }
 
