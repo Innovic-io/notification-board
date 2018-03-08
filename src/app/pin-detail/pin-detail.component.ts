@@ -7,7 +7,7 @@ import { INotification } from '../services/notification.interface';
 import { IJSONResponse } from '../services/jsonResponse.interface';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-pin-detail',
   templateUrl: './pin-detail.component.html',
   styleUrls: ['./pin-detail.component.css']

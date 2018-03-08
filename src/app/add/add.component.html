@@ -1,12 +1,12 @@
 <div class="dashboardWrapper container">
+
   <form class="form-horizontal" #notificationForm="ngForm"
         (submit)="submitForm(notificationForm)">
     <div class="card text-white border-info bg-dark mb-3">
       <fieldset>
-        <!-- Form Name -->
         <legend>Create Notification</legend>
+
         <div id="form">
-          <!-- Author input-->
           <div class="form-group">
             <div class="col-md-7">
               <label class="col-md-7 control-label text-info" for="authorInput">Author</label>
@@ -15,7 +15,7 @@
                      [invalidTooltip]="{required: 'Your name is required'}">
             </div>
           </div>
-          <!-- Text input-->
+
           <div class="form-group">
             <div class="col-md-7">
               <label class="col-md-7 control-label text-info" for="titleInput">Title</label>
@@ -24,7 +24,7 @@
                      [invalidTooltip]="{required: 'Title is required'}">
             </div>
           </div>
-          <!-- Url input-->
+
           <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-8 control-label text-info" for="urlInput">Url</label>
@@ -33,7 +33,7 @@
                      class=" urlExclude form-control input-md">
             </div>
           </div>
-          <!-- Textarea -->
+
           <div class="form-group">
             <div class="col-md-10">
               <label class="col-md-7 control-label text-info" for="textInput">Text</label>
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <!-- Button (Double) -->
+
         <div id="buttonsDiv" class="form-group">
           <button id="createButton" type="submit" name="createButton" class="btn btn-light"
                   [disabled]="!notificationForm.form.valid">Done
@@ -51,5 +51,6 @@
         </div>
       </fieldset>
     </div>
+
   </form>
 </div>

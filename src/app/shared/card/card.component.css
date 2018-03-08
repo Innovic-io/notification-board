@@ -1,9 +1,10 @@
-.card{
+.card {
   background-color: black;
   font-size: 100%;
   font-family: "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", arial, sans-serif;
 
 }
+
 .card:hover .cardOptions, .text {
   opacity: 1.0;
 }
@@ -35,7 +36,6 @@
   opacity: 0.0;
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }

@@ -1,9 +1,11 @@
 <div class="dashboardWrapper">
+
   <div class="masonry">
     <app-loader *ngIf="!(notifications$| async)?.result"></app-loader>
     <div class="container" *ngIf="(notifications$| async)?.result">
-    <app-card class="item" *ngFor="let notification of (notifications$ | async)?.result | sort"
-              [notification]="notification"></app-card>
+      <app-card class="item" *ngFor="let notification of (notifications$ | async)?.result | sort"
+                [notification]="notification"></app-card>
     </div>
   </div>
+
 </div>

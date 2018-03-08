@@ -1,25 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
+
   <a routerLink="/dashboard" class="navbar-brand">
     <img src="/assets/scalableVectorGraphics/pinterest.svg" class="image d-inline-block align-top"
          alt="Logo">
   </a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <form class="form-inline my-2 my-lg-2">
     <input class="search form-control mr-sm-2 bg-light" type="search" placeholder="Search" aria-label="Search"
            (focus)="onFocus()" (input)="onInputChange($event)">
+
     <div class="searchResults" *ngIf="notifications?.result && searchText != '' ">
       <div class="searchResultsDiv" *ngFor="let notification of notifications?.result">
-        <a>{{notification.title}}</a>
+        <div routerLink="/pin/{{notification._id}}">{{notification.title}}</div>
       </div>
     </div>
   </form>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item">
         <a class="nav-link dashboard" routerLink="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
       </li>
@@ -27,11 +30,9 @@
       <li class="nav-item">
         <a class="nav-link dashboard" routerLink="/">User <span class="sr-only">(current)</span></a>
       </li>
-
     </ul>
 
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item">
         <a routerLink="/add" class="navbar-brand">
           <img class="menu" src="assets/scalableVectorGraphics/menu.svg" width="30" height="30" alt="">

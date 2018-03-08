@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   notifications$: Observable<IJSONResponse<INotification[]>>;
 
   constructor(private notificationService: NotificationService, public router: Router) {
-
   }
 
   ngOnInit() {

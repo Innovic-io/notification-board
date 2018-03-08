@@ -6,7 +6,6 @@
   padding: 30px 0;
 }
 
-
 input:not(urlExlude).ng-invalid.ng-touched {
   border-color: red;
   margin: 4px;
@@ -31,8 +30,6 @@ textarea.ng-valid[required], .ng-valid.required {
 textarea.ng-invalid:not(form) {
   border-left: 5px solid #5BC0DE; /* red */
 }
-
-
 
 #form {
   text-align: left;

@@ -19,4 +19,5 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.notifications$ = this.notificationService.getNotifications<INotification[]>();
   }
+
 }

@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   @Output() inputSearch = new EventEmitter();
   searchText;
 
+
   ngOnInit() {
   }
 
@@ -30,4 +31,5 @@ export class HeaderComponent implements OnInit {
     this.notifications = this.inputSearch.next(event.srcElement.value);
     this.searchText = event.srcElement.value;
   }
+
 }
