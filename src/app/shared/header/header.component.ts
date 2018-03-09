@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 
-import { IP, NotificationService } from '../../services/notification.service';
-import { INotification } from '../../services/notification.interface';
-import { OverlayService } from '../../services/overlay.service';
-import { Observable } from 'rxjs/Observable';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { IJSONResponse } from '../../services/jsonResponse.interface';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import {IP, NotificationService} from '../../services/notification.service';
+import {INotification} from '../../services/notification.interface';
+import {OverlayService} from '../../services/overlay.service';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {IJSONResponse} from '../../services/jsonResponse.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,20 +21,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Output() inputFocus = new EventEmitter();
   @Output() inputSearch = new EventEmitter();
   isOverlay;
-  notifications$: Observable<IJSONResponse<INotification[]>>;
   private searchTerms = new BehaviorSubject<string>('');
+  @Input() notifications: IJSONResponse<INotification[]>;
 
-  constructor(private overlayService: OverlayService, private notificationService: NotificationService) {
+  constructor(private overlayService: OverlayService) {
   }
 
 
-  ngOnInit(): void {
-    this.notifications$ = this.searchTerms.pipe(
-      debounceTime(50),
-      distinctUntilChanged(),
-      switchMap((title: string) => this.notificationService.searchNotificationsByTitle(title)),
-    );
-  }
+  ngOnInit(): void {}
 
   search(event: any): void {
     this.searchTerms.next(event.target.value);

@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { environment } from '../../environments/environment.staging';
-import { api } from '../../environments/environment.api';
-import { IJSONResponse } from './jsonResponse.interface';
+import {environment} from '../../environments/environment.staging';
+import {api} from '../../environments/environment.api';
+import {IJSONResponse} from './jsonResponse.interface';
+import {Subject} from 'rxjs/Subject';
 
 export interface IP {
   origin: string;
@@ -11,6 +12,7 @@ export interface IP {
 
 @Injectable()
 export class NotificationService {
+  subjectTitle$ = new Subject;
 
   constructor(private http: HttpClient) {
   }
@@ -29,7 +31,8 @@ export class NotificationService {
   }
 
   searchNotificationsByTitle<T>(title: string) {
-    return this.http.get<IJSONResponse<T>>(api.url + `search?title=^${title}`, {headers: api.headers});
+    this.http.get<IJSONResponse<T>>(api.url + `search?title=^${title}`, {headers: api.headers})
+      .subscribe(data => this.subjectTitle$.next(data));
   }
 
   getIpAddress() {

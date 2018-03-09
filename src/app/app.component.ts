@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { IP, NotificationService } from './services/notification.service';
@@ -35,6 +35,8 @@ export class AppComponent implements OnInit {
   }
 
   searchFocus(event) {
-    this.notifications$ = this.notificationService.searchNotificationsByTitle(event);
+    this.notificationService.searchNotificationsByTitle(event);
+    this.notificationService.subjectTitle$.subscribe();
+   // this.notifications$ = this.notificationService.subjectTitle$;
   }
 }
