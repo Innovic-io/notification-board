@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: AboutComponent},
+      {path: '', component: AboutComponent, pathMatch: 'prefix'},
     ])
   ],
   declarations: [

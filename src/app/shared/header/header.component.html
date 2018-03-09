@@ -11,12 +11,15 @@
   </button>
 
   <form class="form-inline my-2 my-lg-2">
-    <input class="search form-control mr-sm-2 bg-light" type="search" placeholder="Search" aria-label="Search"
-           (focus)="onFocus()" (input)="onInputChange($event)">
+    <input (keyup)="search($event)"
+           class="search form-control mr-sm-2 bg-light"
+           type="search" placeholder="Search" aria-label="Search" (focus)="onFocus()">
 
-    <div class="searchResults" *ngIf="notifications?.result && searchText != '' ">
-      <div class="searchResultsDiv" *ngFor="let notification of notifications?.result">
-        <div routerLink="/pin/{{notification._id}}">{{notification.title}}</div>
+    <div class="searchResults" *ngIf="(notifications$ | async)?.result && searchTerms.getValue() != '' ">
+      <div class="searchResultsDiv" *ngFor="let notification of (notifications$ | async)?.result">
+        <div routerLink="/pin/{{notification._id}}" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">
+          {{notification.title}}
+        </div>
       </div>
     </div>
   </form>

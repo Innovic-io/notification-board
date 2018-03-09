@@ -1,7 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { IP } from '../../services/notification.service';
+import { IP, NotificationService } from '../../services/notification.service';
 import { INotification } from '../../services/notification.interface';
+import { OverlayService } from '../../services/overlay.service';
+import { Observable } from 'rxjs/Observable';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { IJSONResponse } from '../../services/jsonResponse.interface';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,27 +14,44 @@ import { INotification } from '../../services/notification.interface';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   @Input() title: string;
   @Input() ipData: IP;
-  @Input() notifications;
   @Input() notification: INotification;
   @Output() inputFocus = new EventEmitter();
   @Output() inputSearch = new EventEmitter();
-  searchText;
+  isOverlay;
+  notifications$: Observable<IJSONResponse<INotification[]>>;
+  private searchTerms = new BehaviorSubject<string>('');
+
+  constructor(private overlayService: OverlayService, private notificationService: NotificationService) {
+  }
 
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.notifications$ = this.searchTerms.pipe(
+      debounceTime(50),
+      distinctUntilChanged(),
+      switchMap((title: string) => this.notificationService.searchNotificationsByTitle(title)),
+    );
+  }
+
+  search(event: any): void {
+    this.searchTerms.next(event.target.value);
   }
 
   onFocus() {
     this.inputFocus.next(true);
   }
 
-  onInputChange(event) {
-    this.notifications = this.inputSearch.next(event.srcElement.value);
-    this.searchText = event.srcElement.value;
+
+  removeCover() {
+    this.isOverlay = this.overlayService.removeCover();
+    this.inputFocus.next(false);
   }
 
+  ngOnDestroy() {
+    this.searchTerms.next('');
+  }
 }

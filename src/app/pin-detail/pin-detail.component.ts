@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { INotification } from '../services/notification.interface';
 import { IJSONResponse } from '../services/jsonResponse.interface';
+import { OverlayService } from '../services/overlay.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,13 +16,15 @@ import { IJSONResponse } from '../services/jsonResponse.interface';
 export class PinDetailComponent implements OnInit {
   notification$: Observable<IJSONResponse<INotification>>;
 
-  constructor(private route: ActivatedRoute, private notificationService: NotificationService) {
+  constructor(private route: ActivatedRoute,
+              private overlayService: OverlayService,
+              private notificationService: NotificationService) {
   }
 
   ngOnInit() {
 
     const id = this.route.snapshot.params.id;
-
+    this.overlayService.removeCover();
     this.notification$ = this.notificationService.getNotification(id);
   }
 

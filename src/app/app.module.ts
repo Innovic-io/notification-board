@@ -1,21 +1,22 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {routes} from './routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { routes } from './routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
-import {SharedModule} from './shared/shared.module';
-import {RouterModule} from '@angular/router';
+import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
-import {NotificationService} from './services/notification.service';
+import { NotificationService } from './services/notification.service';
 
-import {AppComponent} from './app.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {AddComponent} from './add/add.component';
-import {AboutModule} from './features/about/about.module';
-import {DatePipe} from '@angular/common';
-import {InvalidTooltipModule} from 'ng-invalid-tooltip';
-import {PinDetailComponent} from './pin-detail/pin-detail.component';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddComponent } from './add/add.component';
+import { AboutModule } from './features/about/about.module';
+import { DatePipe } from '@angular/common';
+import { InvalidTooltipModule } from 'ng-invalid-tooltip';
+import { PinDetailComponent } from './pin-detail/pin-detail.component';
+import { OverlayService } from './services/overlay.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {PinDetailComponent} from './pin-detail/pin-detail.component';
     AddComponent,
     PinDetailComponent
   ],
-  providers: [NotificationService, DatePipe],
+  providers: [NotificationService, DatePipe, OverlayService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

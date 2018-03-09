@@ -8,6 +8,5 @@ export const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'pin/:id', component: PinDetailComponent},
-  {path: 'add', component: AddComponent},
-  {path: 'about', loadChildren: 'app/features/about/about.module#AboutModule'},
+  {path: 'add', component: AddComponent}
 ];
