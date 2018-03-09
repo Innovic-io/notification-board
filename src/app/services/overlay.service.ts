@@ -12,8 +12,8 @@ export class OverlayService {
     return this.status;
   }
 
-  setCover() {
-    this.status.next(true);
+  toggleCover(data) {
+    this.status.next(data);
   }
 
   removeCover() {

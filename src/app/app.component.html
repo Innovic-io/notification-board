@@ -1,5 +1,7 @@
 <app-header *ngIf="!router.url.includes('pin')"
-            (inputFocus)="setCover()" (inputSearch)="searchFocus($event)"
+            [notifications]="notifications$ | async"
+            (inputFocus)="setCover($event)" (inputSearch)="searchFocus($event)"
+            [isOverlay]="isOverlay$ | async"
             [ipData]="ipData$ | async">
 </app-header>
 

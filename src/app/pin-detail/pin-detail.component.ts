@@ -14,6 +14,7 @@ import { OverlayService } from '../services/overlay.service';
   styleUrls: ['./pin-detail.component.css']
 })
 export class PinDetailComponent implements OnInit {
+
   notification$: Observable<IJSONResponse<INotification>>;
 
   constructor(private route: ActivatedRoute,
@@ -24,8 +25,6 @@ export class PinDetailComponent implements OnInit {
   ngOnInit() {
 
     const id = this.route.snapshot.params.id;
-    this.overlayService.removeCover();
     this.notification$ = this.notificationService.getNotification(id);
   }
-
 }

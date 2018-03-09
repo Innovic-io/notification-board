@@ -17,34 +17,27 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   @Input() title: string;
   @Input() ipData: IP;
-  @Input() notification: INotification;
+  @Input() notifications: INotification[];
+  @Input() isOverlay;
+
   @Output() inputFocus = new EventEmitter();
   @Output() inputSearch = new EventEmitter();
-  isOverlay;
-  private searchTerms = new BehaviorSubject<string>('');
-  @Input() notifications: IJSONResponse<INotification[]>;
-
-  constructor(private overlayService: OverlayService) {
-  }
-
 
   ngOnInit(): void {}
 
   search(event: any): void {
-    this.searchTerms.next(event.target.value);
+    this.inputSearch.next(event);
   }
 
   onFocus() {
     this.inputFocus.next(true);
   }
 
-
   removeCover() {
-    this.isOverlay = this.overlayService.removeCover();
     this.inputFocus.next(false);
   }
 
   ngOnDestroy() {
-    this.searchTerms.next('');
+    this.inputSearch.next('');
   }
 }
