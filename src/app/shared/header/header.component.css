@@ -1,8 +1,12 @@
+.navbar{
+  padding-left: 16px;
+}
 .navbar-brand {
   background-color: transparent;
   height: 48px;
   width: 48px;
-  margin: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
   box-sizing: border-box;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -12,14 +16,26 @@
 }
 
 .dashboard {
-  margin: 8px;
+  padding-right: 4px;
   text-align: center;
   vertical-align: middle;
 }
 
-.image, .menu, .dots, .chat {
-  height: 32px;
-  width: 32px;
+.menu, .dots, .chat {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  outline: none;
+}
+
+.image {
+  height: 28px;
+  width: 28px;
   position: absolute;
   margin: auto;
   top: 0;

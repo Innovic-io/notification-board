@@ -1,11 +1,7 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import {IP, NotificationService} from '../../services/notification.service';
-import {INotification} from '../../services/notification.interface';
-import {OverlayService} from '../../services/overlay.service';
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {IJSONResponse} from '../../services/jsonResponse.interface';
+import { IP } from '../../services/notification.service';
+import { INotification } from '../../services/notification.interface';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +19,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Output() inputFocus = new EventEmitter();
   @Output() inputSearch = new EventEmitter();
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   search(event: any): void {
     this.inputSearch.next(event);
@@ -38,6 +35,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.inputSearch.next('');
   }
 }

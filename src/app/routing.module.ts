@@ -10,3 +10,4 @@ export const routes: Routes = [
   {path: 'pin/:id', component: PinDetailComponent},
   {path: 'add', component: AddComponent}
 ];
+export const routingComponents = [DashboardComponent, AddComponent, PinDetailComponent];

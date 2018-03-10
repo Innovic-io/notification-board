@@ -14,7 +14,7 @@
     <input #input (keyup)="search(input.value)"
            class="search form-control mr-sm-2 bg-light"
            type="search" placeholder="Search" aria-label="Search" (focus)="onFocus()">
-    <div class="searchResults" *ngIf="notifications?.length">
+    <div class="searchResults" *ngIf="notifications?.length && input.value.length > 0">
       <div class="searchResultsDiv" *ngFor="let notification of notifications">
         <div routerLink="/pin/{{notification._id}}" (click)="removeCover()" [ngClass]="{'overlay': isOverlay}">
           {{notification.title}}
