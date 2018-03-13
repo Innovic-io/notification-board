@@ -21,7 +21,6 @@ export class AddComponent implements OnInit {
 
     this.notificationService.postNotification(form.value)
       .subscribe((data) => {
-        console.log(data);
         form.reset();
         this.router.navigate(['../dashboard']);
       }, (err) => {

@@ -6,8 +6,9 @@ import { PinDetailComponent } from './pin-detail/pin-detail.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
   {path: 'pin/:id', component: PinDetailComponent},
-  {path: 'add', component: AddComponent}
+  {path: 'add', component: AddComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'about', loadChildren: 'app/features/about/about.module#AboutModule'}
 ];
 export const routingComponents = [DashboardComponent, AddComponent, PinDetailComponent];

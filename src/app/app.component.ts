@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
-import { IP, NotificationService } from './services/notification.service';
+import { NotificationService } from './services/notification.service';
 import { INotification } from './services/notification.interface';
 import { Router } from '@angular/router';
 import { OverlayService } from './services/overlay.service';
@@ -14,7 +13,6 @@ import { Subject } from 'rxjs/Subject';
 })
 export class AppComponent implements OnInit {
 
-  ipData$: Observable<IP>;
   isOverlay$;
   notifications$: Subject<INotification[]>;
 
@@ -22,7 +20,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ipData$ = this.notificationService.getIpAddress();
     this.notifications$ = this.notificationService.subjectTitle$;
     this.isOverlay$ = this.overlayService.getStatus();
   }

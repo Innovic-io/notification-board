@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { SharedModule } from './shared/shared.module';
-import { AboutModule } from './features/about/about.module';
 
 import { NotificationService } from './services/notification.service';
 import { OverlayService } from './services/overlay.service';
@@ -21,12 +20,11 @@ import { InvalidTooltipModule } from 'ng-invalid-tooltip';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SharedModule,
+    InvalidTooltipModule,
     RouterModule.forRoot(routes, {
       useHash: true
-    }),
-    SharedModule,
-    AboutModule,
-    InvalidTooltipModule
+    })
   ],
   declarations: [
     AppComponent,

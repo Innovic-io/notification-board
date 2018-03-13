@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { catchError, retry } from 'rxjs/operators';
 
 import 'rxjs/add/operator/filter';
 
-import { environment } from '../../environments/environment.staging';
 import { api } from '../../environments/environment.api';
 import { IJSONResponse } from './jsonResponse.interface';
 import { Subject } from 'rxjs/Subject';
 import { INotification } from './notification.interface';
 
-export interface IP {
-  origin: string;
-}
 
 @Injectable()
 export class NotificationService {
@@ -23,11 +21,14 @@ export class NotificationService {
 
   getNotifications<T>() {
 
-    return this.http.get<IJSONResponse<T>>([api.url, '?fields=title,author,published,text'].join(''), { headers: api.headers });
+    return this.http.get<IJSONResponse<T>>([api.url, '?fields=title,author,published,text'].join(''), {headers: api.headers})
+      .pipe(
+        retry(3),
+        catchError(this.handleError));
   }
 
   getNotification<T>(id: any) {
-    return this.http.get<IJSONResponse<T>>(api.url + id, { headers: api.headers });
+    return this.http.get<IJSONResponse<T>>(api.url + id, {headers: api.headers});
   }
 
   postNotification(data) {
@@ -36,7 +37,7 @@ export class NotificationService {
 
   searchNotificationsByTitle(title: string) {
 
-    this.http.get<IJSONResponse<INotification[]>>(api.url + `search?title=^${title}`, { headers: api.headers })
+    this.http.get<IJSONResponse<INotification[]>>(api.url + `search?title=^${title}`, {headers: api.headers})
       .subscribe(data => {
 
         if (data && 'result' in data) {
@@ -48,7 +49,17 @@ export class NotificationService {
       });
   }
 
-  getIpAddress() {
-    return this.http.get<IP>([environment.url, '/ip'].join(''));
-  }
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.error('An error occurred:', error.error.message);
+    } else {
+      if (error.status === 400)
+        console.error('Bad request');
+      else if (error.status === 401) {
+        console.log('Unauthorized');
+      }
+    }
+    return new ErrorObservable(
+      'Something bad happened; please try again later.');
+  };
 }

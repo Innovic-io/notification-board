@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { IP } from '../../services/notification.service';
 import { INotification } from '../../services/notification.interface';
 
 @Component({
@@ -12,7 +11,6 @@ import { INotification } from '../../services/notification.interface';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   @Input() title: string;
-  @Input() ipData: IP;
   @Input() notifications: INotification[];
   @Input() isOverlay;
 
